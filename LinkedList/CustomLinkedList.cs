@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LinkedList
-{
+{/// <summary>
+/// Linked list
+/// </summary>
     class CustomLinkedList
     {
         public Node head;
-        public void AddLast(int new_data)
+        public void AddLast(int new_data) // creating method for a class
         {
-            Node new_node=new Node(new_data);
+            Node new_node=new Node(new_data); // Creting a object for Node.class
             if (this.head == null)
             {
                 this.head=new_node;

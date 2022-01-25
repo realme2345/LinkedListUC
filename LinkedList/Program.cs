@@ -5,12 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LinkedList
-{
+{/// <summary>
+/// Linked List
+/// </summary>
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" Welcome to the Linked List");
+           CustomLinkedList customLinkedList = new CustomLinkedList();//creating a object
+            customLinkedList.AddLast(56);
+            customLinkedList.AddLast(30);
+            customLinkedList.AddLast(70);
+            customLinkedList.Display();
         }
     }
 }
