@@ -16,11 +16,17 @@ namespace LinkedList
             customLinkedList.AddLast(56);
             customLinkedList.AddLast(30);
             customLinkedList.AddLast(70);
-            Console.WriteLine("Before deleting");
             customLinkedList.Display();
-            customLinkedList.DeleteLastNode();
-            Console.WriteLine("After deleting");
-            customLinkedList.Display();
+            int res=customLinkedList.search(30);
+            if (res == 0)
+            {
+                Console.WriteLine("{0} is not present", res);
+            }
+            else
+            {
+                Console.WriteLine("{0} is present", res);
+            }
+
         }
     }
 }
