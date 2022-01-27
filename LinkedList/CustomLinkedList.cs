@@ -52,15 +52,25 @@ namespace LinkedList
                 }
             }
         }
-       public int DeleteFirstNode()  //this methos is used for deleting the firstnode
+       public int DeleteLastNode()  //this methos is used for deleting the firstnode
         {
+            Node newNode = this.head;
             if(this.head== null)
             {
                 return 0;
             }
-            int deleteNode = this.head.data;
-            this.head = this.head.next;
-            return deleteNode;
+            if(this.head.next == null)
+            {
+                this.head = null;
+                return 0;
+            }
+            while(newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            int lastDeleteNode = newNode.next.data;
+            newNode.next=null;
+            return lastDeleteNode;
         }
     }
 }

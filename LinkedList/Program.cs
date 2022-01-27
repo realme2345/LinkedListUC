@@ -18,7 +18,7 @@ namespace LinkedList
             customLinkedList.AddLast(70);
             Console.WriteLine("Before deleting");
             customLinkedList.Display();
-            customLinkedList.DeleteFirstNode();
+            customLinkedList.DeleteLastNode();
             Console.WriteLine("After deleting");
             customLinkedList.Display();
         }
