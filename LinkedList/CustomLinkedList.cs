@@ -52,7 +52,7 @@ namespace LinkedList
                 }
             }
         }
-        public void AddPosition(int position ,int data)
+        public void AddPosition(int position ,int new_data) //this method is used for adding the valuein particular position
         {
             if (position < 1)
             {
@@ -60,7 +60,7 @@ namespace LinkedList
             }
             if (position == 1)
             {
-                Node new_node=new Node(data);
+                Node new_node=new Node(new_data);
                 new_node.next= this.head;
                 this.head = new_node;
             }
@@ -70,7 +70,7 @@ namespace LinkedList
                 {
                     if(position == 1)
                     {
-                        Node new_node = new Node(data);
+                        Node new_node = new Node(new_data);
                         new_node.next = this.head.next;
                         this.head.next = new_node;
                         break;
