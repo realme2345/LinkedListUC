@@ -17,16 +17,8 @@ namespace LinkedList
             customLinkedList.AddLast(30);
             customLinkedList.AddLast(70);
             customLinkedList.Display();
-            int res=customLinkedList.search(30);
-            if (res == 0)
-            {
-                Console.WriteLine("{0} is not present", res);
-            }
-            else
-            {
-                Console.WriteLine("{0} is present", res);
-            }
-
+            customLinkedList.AddPosition(3, 40);
+            customLinkedList.Display();
         }
     }
 }

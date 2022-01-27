@@ -52,19 +52,36 @@ namespace LinkedList
                 }
             }
         }
-       public int search(int value)  //this methos is used for finding the value
+        public void AddPosition(int position, int new_data) //this method is used for adding the valuein particular position
         {
             Node temp = this.head;
-            while(temp != null)
+            if (position < 1)
             {
-                if (temp.data == value)
-                {
-                    return value;
-                }
-                temp = temp.next;
+                Console.WriteLine("Invalid Position");
             }
-            Console.WriteLine("{0} is not present", value);
-            return 0;
+            if (position == 1)
+            {
+                Node new_node = new Node(new_data);
+                new_node.next = this.head;
+                this.head = new_node;
+            }
+            else
+            {
+                while (position--!= 0)
+                {
+                    if (position == 1)
+                    {
+                        Node new_node = new Node(new_data);
+                        new_node.next = temp.next;
+                        temp.next = new_node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position out of range");
+            }
+            Console.WriteLine("Inserted Value is " + temp.next.data);
         }
     }
 }
