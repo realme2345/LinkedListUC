@@ -17,7 +17,7 @@ namespace LinkedList
             customLinkedList.AddLast(30);
             customLinkedList.AddLast(70);
             customLinkedList.Display();
-            customLinkedList.AddPosition(3, 40);
+            customLinkedList.deleteNode(40);
             customLinkedList.Display();
         }
     }

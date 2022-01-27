@@ -52,36 +52,36 @@ namespace LinkedList
                 }
             }
         }
-        public void AddPosition(int position, int new_data) //this method is used for adding the valuein particular position
+        public  void deleteNode(int value) //this method for deleting the particular value from linked list
         {
-            Node temp = this.head;
-            if (position < 1)
+            // Store head node
+            Node temp = this.head, prev = null;
+
+            // If head node itself holds the key to be deleted
+            if (temp != null &&
+                temp.data == value)
             {
-                Console.WriteLine("Invalid Position");
+                // Changed head
+                this.head = temp.next;
+                Console.WriteLine(temp.data);
             }
-            if (position == 1)
+
+            // Search for the key to be  deleted, keep track of the previous node as we need
+            // to change temp.next
+            while (temp != null &&
+                   temp.data != value)
             {
-                Node new_node = new Node(new_data);
-                new_node.next = this.head;
-                this.head = new_node;
+                prev = temp;
+                temp = temp.next;
+                Console.WriteLine("{0} Number is not present",value);
+                break;
             }
-            else
-            {
-                while (position--!= 0)
-                {
-                    if (position == 1)
-                    {
-                        Node new_node = new Node(new_data);
-                        new_node.next = temp.next;
-                        temp.next = new_node;
-                        break;
-                    }
-                    temp = temp.next;
-                }
-                if (position != 1)
-                    Console.WriteLine("Position out of range");
-            }
-            Console.WriteLine("Inserted Value is " + temp.next.data);
+            // If key was not present in linked list
+            if (temp == null)
+                return ;
+
+            // Unlink the node from linked list
+            prev.next = temp.next;
         }
     }
 }
