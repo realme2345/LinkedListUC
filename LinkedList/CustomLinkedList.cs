@@ -11,7 +11,7 @@ namespace LinkedList
     class CustomLinkedList //Adding the elements to linked list by using th e append method
     {
         public Node head;
-        public void AddAppend(int new_data) // creating method for a class
+        public void AddLast(int new_data) // creating method for a class
         {
             Node new_node = new Node(new_data); // Creting a object for Node.class
             if (this.head == null)
@@ -51,6 +51,36 @@ namespace LinkedList
                     temp = temp.next;
                 }
             }
+        }
+        public void AddPosition(int position ,int data)
+        {
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+            if (position == 1)
+            {
+                Node new_node=new Node(data);
+                new_node.next= this.head;
+                this.head = new_node;
+            }
+            else
+            {
+                while(position-- != 0)
+                {
+                    if(position == 1)
+                    {
+                        Node new_node = new Node(data);
+                        new_node.next = this.head.next;
+                        this.head.next = new_node;
+                        break;
+                    }
+                    this.head=this.head.next;
+                }
+                if (position == 1)
+                    Console.WriteLine("Position out of range");
+            }
+            Console.WriteLine("Inserted Value is " + head.next.data);
         }
     }
 }
