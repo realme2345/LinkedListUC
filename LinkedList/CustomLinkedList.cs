@@ -8,33 +8,19 @@ namespace LinkedList
 {/// <summary>
 /// Linked list
 /// </summary>
-    class CustomLinkedList
+    class CustomLinkedList //Adding the elements form last to first 
     {
         public Node head;
-        public void AddLast(int new_data) // creating method for a class
+        public void AddFront(int new_data) // creating method for a class
         {
             Node new_node=new Node(new_data); // Creting a object for Node.class
-            if (this.head == null)
-            {
-                this.head=new_node;
-            }
-            else
-            {
-                Node lastNode = GetLastNode();
-                lastNode.next=new_node;
-            }
+            // when we want to add any node at the front , we want the head to point to it.
+            new_node.next=this.head;
+            // the previous head node is now the second node of linked list 
+            this.head=new_node;
             Console.WriteLine("inserted into list" +" " + new_node.data);
         }
-        public Node GetLastNode()  
-        {
-            Node temp=this.head;
-            while (temp.next != null)
-            {
-                temp=temp.next;
-            }
-            return temp;
-        }
-        public void Display()
+        public void Display()//this method is for displaying the elements in linked list
         {
             Console.WriteLine("Displaying Names");
             Node temp = this.head;
@@ -47,7 +33,7 @@ namespace LinkedList
             {
                 while (temp != null)
                 {
-                    Console.Write(temp.data);
+                    Console.WriteLine(temp.data);
                     temp = temp.next;
                 }
             }
