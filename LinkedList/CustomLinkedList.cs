@@ -52,35 +52,15 @@ namespace LinkedList
                 }
             }
         }
-        public void AddPosition(int position ,int new_data) //this method is used for adding the valuein particular position
+       public int DeleteFirstNode()  //this methos is used for deleting the firstnode
         {
-            if (position < 1)
+            if(this.head== null)
             {
-                Console.WriteLine("Invalid Position");
+                return 0;
             }
-            if (position == 1)
-            {
-                Node new_node=new Node(new_data);
-                new_node.next= this.head;
-                this.head = new_node;
-            }
-            else
-            {
-                while(position-- != 0)
-                {
-                    if(position == 1)
-                    {
-                        Node new_node = new Node(new_data);
-                        new_node.next = this.head.next;
-                        this.head.next = new_node;
-                        break;
-                    }
-                    this.head=this.head.next;
-                }
-                if (position == 1)
-                    Console.WriteLine("Position out of range");
-            }
-            Console.WriteLine("Inserted Value is " + head.next.data);
+            int deleteNode = this.head.data;
+            this.head = this.head.next;
+            return deleteNode;
         }
     }
 }

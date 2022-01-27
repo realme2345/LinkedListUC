@@ -14,8 +14,12 @@ namespace LinkedList
         {
            CustomLinkedList customLinkedList = new CustomLinkedList();//creating a object
             customLinkedList.AddLast(56);
+            customLinkedList.AddLast(30);
             customLinkedList.AddLast(70);
-            customLinkedList.AddPosition(2,30);
+            Console.WriteLine("Before deleting");
+            customLinkedList.Display();
+            customLinkedList.DeleteFirstNode();
+            Console.WriteLine("After deleting");
             customLinkedList.Display();
         }
     }
