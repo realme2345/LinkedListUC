@@ -77,7 +77,7 @@ namespace LinkedList
                     }
                     this.head=this.head.next;
                 }
-                if (position == 1)
+                if (position != 1)
                     Console.WriteLine("Position out of range");
             }
             Console.WriteLine("Inserted Value is " + head.next.data);
