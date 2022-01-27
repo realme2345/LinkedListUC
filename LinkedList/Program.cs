@@ -13,9 +13,9 @@ namespace LinkedList
         static void Main(string[] args)
         {
            CustomLinkedList customLinkedList = new CustomLinkedList();//creating a object
-            customLinkedList.AddFront(70);
-            customLinkedList.AddFront(30);
-            customLinkedList.AddFront(56);
+            customLinkedList.AddAppend(56);
+            customLinkedList.AddAppend(30);
+            customLinkedList.AddAppend(70);
             customLinkedList.Display();
         }
     }

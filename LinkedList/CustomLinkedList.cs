@@ -8,17 +8,31 @@ namespace LinkedList
 {/// <summary>
 /// Linked list
 /// </summary>
-    class CustomLinkedList //Adding the elements form last to first 
+    class CustomLinkedList //Adding the elements to linked list by using th e append method
     {
         public Node head;
-        public void AddFront(int new_data) // creating method for a class
+        public void AddAppend(int new_data) // creating method for a class
         {
-            Node new_node=new Node(new_data); // Creting a object for Node.class
-            // when we want to add any node at the front , we want the head to point to it.
-            new_node.next=this.head;
-            // the previous head node is now the second node of linked list 
-            this.head=new_node;
-            Console.WriteLine("inserted into list" +" " + new_node.data);
+            Node new_node = new Node(new_data); // Creting a object for Node.class
+            if (this.head == null)
+            {
+                this.head = new_node; //assigning the elemnts to the head
+            }
+            else
+            {
+                Node lastNode = GetLastNode();
+                lastNode.next = new_node;
+            }
+            Console.WriteLine("inserted into list" + " " + new_node.data);
+        }
+        public Node GetLastNode() //this method for getting the last node reference
+        {
+            Node temp = this.head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            return temp;
         }
         public void Display()//this method is for displaying the elements in linked list
         {
