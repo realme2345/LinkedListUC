@@ -52,7 +52,7 @@ namespace LinkedList
                 }
             }
         }
-        public void SortAscending()
+        public void SortAscending() //this used for ascending the values in linked list
         {
             Node temp = this.head;
             Node firstVal = null;
