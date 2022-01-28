@@ -36,7 +36,7 @@ namespace LinkedList
         }
         public void Display()//this method is for displaying the elements in linked list
         {
-            Console.WriteLine("Displaying Names");
+            Console.WriteLine("Displaying Data");
             Node temp = this.head;
             if (temp == null)
             {
@@ -52,36 +52,27 @@ namespace LinkedList
                 }
             }
         }
-        public  void deleteNode(int value) //this method for deleting the particular value from linked list
+        public void SortAscending()
         {
-            // Store head node
-            Node temp = this.head, prev = null;
-
-            // If head node itself holds the key to be deleted
-            if (temp != null &&
-                temp.data == value)
+            Node temp = this.head;
+            Node firstVal = null;
+            int val = 0;
+            while (temp != null)
             {
-                // Changed head
-                this.head = temp.next;
-                Console.WriteLine(temp.data);
-            }
-
-            // Search for the key to be  deleted, keep track of the previous node as we need
-            // to change temp.next
-            while (temp != null &&
-                   temp.data != value)
-            {
-                prev = temp;
+                firstVal = temp.next;
+                while (firstVal != null)
+                {
+                    if (temp.data>firstVal.data)
+                    {
+                        val = firstVal.data;
+                        firstVal.data = temp.data;
+                        temp.data = val;
+                    }
+                    firstVal = firstVal.next;
+                }
                 temp = temp.next;
-                Console.WriteLine("{0} Number is not present",value);
-                break;
             }
-            // If key was not present in linked list
-            if (temp == null)
-                return ;
-
-            // Unlink the node from linked list
-            prev.next = temp.next;
+            Console.WriteLine("Sorted the Linked List :");
         }
     }
 }

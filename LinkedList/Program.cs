@@ -13,11 +13,11 @@ namespace LinkedList
         static void Main(string[] args)
         {
            CustomLinkedList customLinkedList = new CustomLinkedList();//creating a object
-            customLinkedList.AddLast(56);
-            customLinkedList.AddLast(30);
             customLinkedList.AddLast(70);
+            customLinkedList.AddLast(30);
+            customLinkedList.AddLast(56);
             customLinkedList.Display();
-            customLinkedList.deleteNode(40);
+            customLinkedList.SortAscending();
             customLinkedList.Display();
         }
     }
